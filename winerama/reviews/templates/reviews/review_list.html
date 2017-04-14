@@ -1,5 +1,9 @@
+{% extends 'reviews/base.html' %}
+{% block title %}
 <h2>Latest Reviews</h2>
+{% endblock title %}
 
+{% block content %}
 {% if latest_review_list %}
 <div>
     {% for review in latest_review_list %}
@@ -14,3 +18,4 @@
 {% else %}
 <h2>No reviews are available</h2>
 {% endif %}
+{% endblock content %}
