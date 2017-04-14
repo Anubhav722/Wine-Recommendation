@@ -1,0 +1,16 @@
+<h2>Latest Reviews</h2>
+
+{% if latest_review_list %}
+<div>
+    {% for review in latest_review_list %}
+        <div>
+            <h3><a href="{% url 'reviews:review_detail' review.id %}">{{ review.wine.name }}</a></h3>
+            <h4>Rated {{ review.rating }} out of 5 by {{ review.user_name }}</h4>
+            <p>{{ review.comment }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% else %}
+<h2>No reviews are available</h2>
+{% endif %}
