@@ -13,5 +13,6 @@ urlpatterns = [
 
     url(r'^add_review/(?P<wine_id>[0-9]+)/$', views.add_review, name='add_review'),
 
-    url(r'^user/$', views.user_review_list, name='user_review_list')
+    url(r'^user/$', views.user_review_list, name='user_review_list'),
+    url(r'^user/(?P<username>\w+)/$', views.user_review_list, name='user_review_list'),
 ]
