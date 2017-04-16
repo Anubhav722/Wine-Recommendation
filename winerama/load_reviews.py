@@ -1,7 +1,7 @@
 import sys, os
 import pandas as pd
 import datetime
-import ipdb; ipdb.set_trace()
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "winerama.settings")
 
 import django
@@ -11,7 +11,6 @@ from reviews.models import Review, Wine
 
 
 def save_review_from_row(review_row):
-    import ipdb; ipdb.set_trace()
     review = Review()
     review.id = review_row[0]
     review.user_name = review_row[1]
