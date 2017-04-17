@@ -14,6 +14,16 @@
                 <li><a href="{% url 'reviews:wine_list' %}">Wine List</a></li>
                 <li><a href="{% url 'reviews:review_list' %}">Home</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'reviews:user_review_list' user.username %}">Hello {{ user.username}}</a></li>
+                <li><a href="{% url 'reviews:user_recommendation_list' %}">Wine suggestions</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %"}>Login</a></li>
+                <li><a href="/accounts/register">Register</a></li>
+            {% endif %}
+            </ul>
         </div>
     </nav>
 
